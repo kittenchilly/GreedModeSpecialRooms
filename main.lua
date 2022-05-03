@@ -5,8 +5,8 @@ local rng = RNG()
 
 mod.savedrooms={}
 
-function mod:DoSacrifice()
-
+function mod:DoLibrary()
+	local room = level:GetRoomByIdx(83,0)
 end
 
 function mod:DoPlanetarium()
@@ -46,8 +46,8 @@ function mod:Init()
 	local level = game:GetLevel()
 	rng:SetSeed(game:GetSeeds():GetStageSeed(level:GetStage()),0)
 	
-	if rng:RandomFloat <= 0.5 then
-		mod:DoSacrifice()
+	if rng:RandomInt(20) == 0 then
+		--mod:DoLibrary()
 	end
 	
 	if rng:RandomFloat() < level:GetPlanetariumChance() then
